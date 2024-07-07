@@ -8,7 +8,7 @@ if (length(args) != 1) {
 file_path <- args[1]
 
 #pull in data
-data <- read.csv('regrex1.csv')
+data <- read.csv(args)
 
 # Generate scatter plot and save as r_orig.png
 png(file = "r_orig.png")
