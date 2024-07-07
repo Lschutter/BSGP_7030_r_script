@@ -1,5 +1,14 @@
-data <- read.csv('regrex1.csv')
+#!/usr/bin/env Rscript
 
+args <- commandArgs(trailingOnly = TRUE)
+if (length(args) != 1) {
+  stop("Please provide exactly one argument: the path to the CSV file.")
+}
+
+file_path <- args[1]
+
+#pull in data
+data <- read.csv('regrex1.csv')
 
 # Generate scatter plot and save as r_orig.png
 png(file = "r_orig.png")
@@ -20,7 +29,8 @@ lines(data$x, pred, col = "red")
 title('Combined Plot R')
 dev.off()
 
-# Print summary of linear model
+# Print summary of lm
 print(summary(lmData))
+
 
 
